@@ -1,5 +1,4 @@
 ---
-
 - name: Create influxdb group
   group:
     name: "{{ influxdb_group }}"
@@ -15,6 +14,14 @@
   tags:
     - influxdb
 
+# HXR: Ensure user is part of ssl-cert group and will have access to that data.
+- name: Add influxdb to ssl-cert
+  user:
+    name: "{{ influxdb_user }}"
+    groups: ssl-cert
+    append: yes
+  when: ssl_cert_group_available is defined and ssl_cert_group_available
+
 - name: Configure collectd
   include: collectd.yml
   when: influxdb_collectd_enabled == "true"
@@ -26,6 +33,11 @@
 
 - include: install-debian.yml
   when: influxdb_install_method == "repository" and ansible_distribution in ["Debian", "Ubuntu"]
+  tags:
+    - influxdb
+
+- include: install-rhel.yml
+  when: influxdb_install_method == "repository" and ansible_distribution in ["Enterprise Linux", "CentOS"]
   tags:
     - influxdb
 
