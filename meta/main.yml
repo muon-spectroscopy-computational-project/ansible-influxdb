@@ -3,6 +3,7 @@ galaxy_info:
   author: mtchavez and hexylena
   company: Galaxy Europe
   description: InfluxDB
+  role_name: influxdb
   license: MIT
   min_ansible_version: 2.7
   platforms:
