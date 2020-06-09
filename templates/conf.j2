@@ -546,3 +546,12 @@ hostname = "{{ influxdb_hostname }}"
   # interval for how often continuous queries will be checked if they need to run
   # run-interval = "1s"
   run-interval = "{{ influxdb_cqueries_run_interval }}"
+
+###
+### [logging]
+###
+
+[logging]
+  format = "{{ influxdb_logging_format }}"
+  level = "{{ influxdb_logging_level }}"
+  suppress-logo = "{{ influxdb_logging_suppress-logo }}"

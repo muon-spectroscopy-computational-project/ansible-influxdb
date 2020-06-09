@@ -156,3 +156,8 @@ influxdb_udp_read_buffer: 0
 influxdb_cqueries_enabled: "true"
 influxdb_cqueries_log_enabled: "true"
 influxdb_cqueries_run_interval: "1s"
+
+# [logging]
+influxdb_logging_format: "auto"
+influxdb_logging_level: "info"
+influxdb_logging_suppress-logo: "false"
