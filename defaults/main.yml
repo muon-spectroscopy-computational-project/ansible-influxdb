@@ -160,4 +160,4 @@ influxdb_cqueries_run_interval: "1s"
 # [logging]
 influxdb_logging_format: "auto"
 influxdb_logging_level: "info"
-influxdb_logging_suppress-logo: "false"
+influxdb_logging_suppress_logo: "false"
