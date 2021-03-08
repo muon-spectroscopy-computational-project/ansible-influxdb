@@ -52,6 +52,8 @@ hostname = "{{ influxdb_hostname }}"
   # The directory where the TSM storage engine stores TSM files.
   dir = "{{ influxdb_data_dir }}"
 
+  index-version = "{{ influxdb_index_version }}"
+
   # The directory where the TSM storage engine stores WAL files.
   wal-dir = "{{ influxdb_wal_dir }}"
 
